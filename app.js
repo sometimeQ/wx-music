@@ -8,6 +8,10 @@ App({
       let navBarHeight = 44；
       let navBarHeightNew = navBarHeight * 750 / wx.getSystemInfoSync().windowWidth;
     */
+
+
+
+    
     // 设置系统全局对象保存信息
     gloableSystemMessage(this);
     
