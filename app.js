@@ -10,8 +10,6 @@ App({
     */
 
 
-
-    
     // 设置系统全局对象保存信息
     gloableSystemMessage(this);
     
