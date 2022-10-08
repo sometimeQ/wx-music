@@ -1,0 +1,74 @@
+
+/* 定位 */
+.nav-gationbar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: #fafafa;
+  width: 100%;
+}
+/* nav */
+.nav-gationbar .nav-menu {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  /* padding-left: 14px; */
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* 导航栏激活的样式 */
+.navgationbar-selected {
+  /* color: #999999; */
+  font-size: 20.5px;
+  margin-right: 14px;
+  transition: 0.2s all linear;
+  /* 文字悬浮在下划线的上面 */
+  z-index: 2; 
+}
+
+/* 底部的导航栏线条 */
+.nav-underline {
+  position: absolute;
+  bottom: 5px;
+  background: #26ce8a;
+  height: 10rpx;
+  border-radius: 10rpx;
+  transition: 0.2s all linear;
+  z-index: 1;
+}
+
+/* 内容区域 */
+.mvStyle {
+  padding: 0 24rpx;
+}
+
+.singer-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.singer-area .area {
+  font-size: 32rpx;
+  border-radius: 30rpx;
+  background: rgba(0, 0, 0, 0.1);
+  width: 70rpx;
+  padding: 10rpx 20rpx;
+  margin: 10rpx 0;
+}
+
+.van-dropdown-menu {
+  background: #fafafa !important;
+  border-radius: 22rpx !important;
+  margin: 30rpx 0 !important;
+}
+
+.video-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-content .item {
+  width: 48%;
+  margin: 0 8rpx;
+}

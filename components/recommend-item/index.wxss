@@ -1,0 +1,89 @@
+/* components/recommend-item/index.wxss */
+.item {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+}
+
+.image-info {
+  /* 方便定位里面的图标 */
+  position: relative;
+}
+
+.image-info .image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+  /* 阴影类型 X轴位移 Y轴位移 阴影大小 阴影扩展 阴影颜色 */
+  /* X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色 投影方式 */
+  box-shadow: 0 2rpx 2rpx rgba(0, 0, 0, 0.3);
+}
+
+.play-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 0px;
+  bottom: 10rpx;
+  border-radius: 12rpx;
+  background: rgba(0, 0, 0, .5);
+  padding: 0rpx 6rpx 0rpx 2rpx;
+  color: #fff;
+  font-size: 18rpx;
+}
+
+/* 图片里面的小图标，以及播放量 */
+.play-counter .arrow {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.content {
+  font-size: 16rpx;
+  margin-left: 16rpx;
+  /* 会吧箭头符号撑到最右边去 */
+  flex: 1;
+}
+
+.content .name-info {
+  display: flex;
+  align-items: center;
+}
+
+.content .name-info .name {
+  margin-left: 15rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #555;
+  /* 不换行属性 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content .name-info .tran-name {
+  font-size: 24rpx;
+  color: #999999;
+  /* 不换行属性 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10rpx;
+}
+
+.source {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 右边箭头图标 */
+.arrow .arrow-right {
+  width: 50rpx;
+  height: 50rpx;
+}
+

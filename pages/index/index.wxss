@@ -1,0 +1,161 @@
+/**index.wxss**/
+.nav-gationbar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: #fafafa;
+  width: 100%;
+}
+
+.nav-gationbar .nav-menu {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* 导航栏激活的样式 */
+.navgationbar-selected {
+  color: #999999;
+  font-size: 20.5px;
+  font-weight: 700;
+  margin-right: 14px;
+  transition: 0.2s all linear;
+  /* 文字悬浮在下划线的上面 */
+  z-index: 1; 
+  /* border-bottom: 10rpx solid #26ce8a;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;  */
+}
+
+/* 底部的导航栏线条 */
+.nav-underline {
+  position: absolute;
+  bottom: 5px;
+  background: #26ce8a;
+  height: 10rpx;
+  border-radius: 10rpx;
+  transition: 0.2s all linear;
+  z-index: 1;
+}
+
+/* 首页 */
+.main {
+  height: 2600rpx;
+  padding: 0 18rpx;
+}
+
+/*轮播图 */
+.swiper {
+  border-radius: 10rpx;
+  /* width: 100%; */
+  overflow: hidden;
+  /* 如果某些机型出现圆角不显示的情况，可以使用这个样式 */
+  transform: translate(Y);
+}
+
+.swiper-items {
+  display: flex;
+  position: relative;
+}
+
+.swiper-item .swiper-image {
+  width: 100%;
+}
+
+.swiper-item .type {
+  position: absolute;
+  font-weight: 500;
+  bottom: 0px;
+  right: 0px;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  padding: 2rpx 10rpx;
+}
+
+.allrank-list {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+/* 解决最后一排数量不够自动向两端排列问题 */
+/* .allrank-list:after{
+  content: '';
+  width: 30%;
+  height: 220rpx;
+  margin-right: 20rpx;
+} */
+
+/* 歌手Nav */
+.singer-area {
+    display: flex;
+}
+
+.singer-area .area {
+  font-size: 32rpx;
+  border-radius: 30rpx;
+  background: rgba(0, 0, 0, 0.1);
+  width: 70rpx;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  padding: 2rpx 10rpx;
+}
+
+/* 歌手性别 */
+.singer-type {
+  display: flex;
+}
+
+.singer-type .type {
+  font-size: 32rpx;
+  border-radius: 30rpx;
+  background: rgba(0, 0, 0, 0.1);
+  width: 70rpx;
+  margin-right: 10rpx;
+  text-align: center;
+  padding: 2rpx 10rpx;
+}
+
+/* 内容 */
+.content {
+
+}
+
+.content .header {
+  font-size: 36rpx;
+  font-weight: 700;
+  margin: 19rpx 0 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.content-list-item  {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  border-radius: 22rpx;
+}
+
+.content-list .content-list-item .image {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 20%;
+  margin-right: 40rpx;
+}
+
+.content-list-item .info .singer-name {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.content-list-item .info .trans-name {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+
+

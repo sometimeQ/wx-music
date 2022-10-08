@@ -1,0 +1,132 @@
+<!-- 导入wxs格式化js工具 -->
+<wxs src='../../utils/format.wxs' module="formatUtil"></wxs>
+
+<view>
+  <!-- 导航栏布局 -->
+  <view class="nav-gationbar" style="height: {{navgationBarHeight}}px;">
+    <view class="nav-menu" style="left: {{menuMarginRight}}px; bottom: {{menuMarginBotton}}px; height: {{menuHeight}}px; min-height: {{menuHeight}}px; line-height: {{menuHeight}}px;">
+      <view class="{{currentTableIndex == index ? 'navgationbar-selected' : 'navgationbar-normal'}}" 
+            style="margin-right: 14px;"
+            wx:for="{{navgationBarList}}" wx:key="index" data-index="{{index}}" bindtap="switchNavagationBar">
+            {{item.navgationTitle}}
+      </view>
+      <!-- 底部的下划线 -->
+      <view class="nav-underline" style="left: {{navgationBarOffsetLeft - menuMarginRight}}px; width: {{navgationBarContentWidth}}px;"></view>
+    </view>
+  </view>
+  <!-- 底部数据 -->
+  <view class="text" style="margin-top: {{navgationBarHeight}}px;">
+    <!-- 参考微信官方文档 ,至于为什么需要把搜索框放入到swiper里面，是因为左右滑动自动切换顶部的导航栏效果-->
+    <!-- 外部是整体滑动的 -->
+    <swiper class="main" interval="5000" duration="500" current="{{currentTableIndex}}" bindchange="changeNavbarAction">
+      <!-- nav推荐区域 -->
+      <swiper-item>
+        <!-- 搜索框 基础库高于2.18.0会有警告solt -->
+        <item-search tempData="这是临时数据啦"></item-search>
+        <!-- 控制轮播图滑动的 -->
+        <swiper class="swiper" indicator-dots="true" circular="true" autoplay="true" style="height: {{swiperHeight}}px;">
+          <!-- 不会渲染的那种 -->
+          <block wx:for="{{banners}}" wx:key="bannerId">
+            <swiper-item class="swiper-item">
+              <!-- 图片, 根据宽度去修复 -->
+              <image class="swiper-image" src="{{item.pic}}" mode="widthFix" bindload="handleSwiperImageLoaded"></image>
+              <!-- 右下角底部小图标 -->
+              <view class="type" style="background:{{item.titleColor}};">
+                <view>{{item.typeTitle}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <!-- 推荐新歌 -->
+        <view class="recommend-song" wx:if="{{recommendSongs.length > 0}}" style="height: 500px;">
+          <!-- 自定义组件的标题 -->
+          <item-header title="新歌推荐" bindtap="handleMoreClick"></item-header>
+          <!-- 展示推荐新歌的数据 -->
+          <view class="song-list">
+            <block wx:for="{{recommendSongs}}" wx:key="id">
+              <!-- 引入封装的组件 -->
+              <recommend-item item="{{item}}"></recommend-item>
+            </block>
+          </view>
+          <!-- 个性推荐 -->
+          <playlist-area recommendPlaylist="{{recommendPlaylist}}"></playlist-area>
+          <!-- 巅峰榜 -->
+          <view class="ranking">
+            <item-header title="巅峰排行榜" showRightItem="{{false}}"></item-header>
+            <!-- 布局子控件 -->
+            <view class="ranking-list">
+              <block wx:for="{{rankings}}" wx:key="index">
+                <ranking-area data="{{item}}" data-index="{{index}}" bindtap="handleRankingItemClick"></ranking-area>
+              </block>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+
+      <!-- nav音乐馆区域 -->
+      <swiper-item>
+      <scroll-view scroll-y style="height: 100%;">
+        <!-- 搜索框 基础库高于2.18.0会有警告solt -->
+        <item-search tempData="这是临时数据啦"></item-search>
+        <!-- 巅峰榜 -->
+        <view class="ranking">
+            <item-header title="巅峰排行榜" showRightItem="{{false}}"></item-header>
+            <!-- 布局子控件 -->
+            <view class="ranking-list">
+              <block wx:for="{{rankings}}" wx:key="index">
+                <ranking-area data="{{item}}" data-index="{{index}}" bindtap="handleRankingItemClick" showBottomImage="{{false}}"></ranking-area>
+              </block>
+            </view>
+        </view>
+        <!-- 所有榜单 -->
+        <view class="all-list">
+          <playlist-all-area allRankingList="{{allRankingList}}"></playlist-all-area>
+        </view>
+      </scroll-view>
+      </swiper-item>
+
+      <!-- nav歌手区域 -->
+      <swiper-item>
+        <scroll-view scroll-y style="height: 100%;">
+          <!-- 搜索框 基础库高于2.18.0会有警告solt -->
+          <item-search></item-search>
+          <!-- 歌手地区 -->
+          <view class="singer-area">
+            <block wx:for="{{areaList}}" wx:key="index">
+              <!-- 只用data- 自定义数据 -->
+              <view class="area" data-index="{{item.index}}" data-name="{{item.name}}" data-value="{{item.value}}"
+                bindtap="handleAreaActiveItem" style="{{currentAreaIndex === index ? 'background: #26ce8a' : '' }}">{{item.name}}</view>
+            </block>
+          </view>
+          <!-- 性别 -->
+          <view class="singer-type">
+            <block wx:for="{{typeList}}" wx:key="index">
+              <view class="type" data-index="{{item.index}}" data-name="{{item.name}}" data-value="{{item.value}}"
+                bindtap="handleTypeActiveItem" style="{{currentTypeIndex === index ? 'background: #26ce8a' : ''}}">{{item.name}}</view>
+            </block>
+          </view>
+          <!-- 内容 -->
+          <view class="content">
+            <view class="header">
+              <text wx:if="{{currentAreaName !== '全部'}}">{{currentAreaName}}</text>
+              <text wx:if="{{currentAreaName !== '全部' && currentTypeName !== '全部'}}" decode="{{true}}"> - </text>
+              <text wx:if="{{currentTypeName !== '全部'}}">{{currentTypeName}}</text>
+            </view>
+            <view class="content-list">
+              <block wx:for="{{singerTypeList}}" wx:key="id">
+                <view class="content-list-item" bindtap="handleSingerIdItem" data-id="{{item.id}}">
+                  <image class="image" src="{{item.picUrl}}" mode="aspectFit"></image>
+                  <view class="info">
+                    <text class="singer-name">{{item.name}}</text>
+                    <text class="trans-name" decode="{{true}}"> - {{item.trans-name}}</text>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>

@@ -1,0 +1,25 @@
+<!--components/item-header/index.wxml-->
+<view class="header">
+  <view class="header-left">
+    <!-- 接收属性那里使用的 -->
+    <view id="title">{{title}}</view>
+    <view class="underline" style="width: {{titleWidth}}px;"></view>
+  </view>
+  <!-- 右边 -->
+  <view class="header-right" wx:if="{{showRightItem}}">
+    <view class="slot"></view>
+    <view class="right-info">
+      <text>{{rightTitle}}</text>
+      <image class="arrow" src="../../assets/images/icons/right-arrow.png" />
+    </view>
+  </view>
+
+  <!-- 是否展示🔍图标 -->
+  <view class="header-right" wx:if="{{showSearchItem}}">
+    <!-- 占位用的，用来决定这次是否显示 header .slot:empty + .right-info  -->
+    <view class="slot"></view>
+    <view class="right-info">
+      <image class="image" src="../../assets/images/search/trash.png" bindtap="deleteAllHistoryRecord"/>
+    </view>
+  </view>
+</view>

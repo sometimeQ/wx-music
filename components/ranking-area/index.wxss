@@ -1,0 +1,105 @@
+/* components/ranking-area/index.wxss */
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  /* background-color: purple; */
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  width: 92vm;
+}
+/* 左边内容布局 */
+.content {
+  padding: 24rpx;
+  flex: 1;
+  overflow: hidden;
+}
+/* 标题 */
+.content-title {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+/* 子item布局 */
+.content-list {
+  /* display: flex;
+  align-items: center; */
+  font-size: 24rpx;
+  width: 100%;
+  margin-top: 2rpx;
+}
+/* 内部的item布局 */
+.content-list-item {
+  display: flex;
+  align-items: center;
+  color: #333;
+  width: 100%;
+  margin-top: 2rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-emphasis: none;
+}
+
+/* 索引 */
+.content-list-item .index {
+  margin-top: 3rpx;
+  font-weight: 600;
+}
+
+/* 歌手 */
+.content-list-item .singer {
+  color: #999;
+  margin-top: 6rpx;
+  padding-left: 8rpx;
+ }
+
+.album {
+  width: 220rpx;
+  position: relative;
+  display: flex;
+}
+
+/* 图片 */
+.album .image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12rpx;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5)
+}
+
+/* 背景色 */
+.album .play-counter {
+  /* 居中 */
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  color: #eee;
+  font-size: 22rpx;
+  border-radius: 12rpx;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 小图标 */
+.album .play-counter .arrow {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* 底部图片居中显示 */
+.bottom-image {
+  /* 定位到底部 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 8.5%;
+  margin: auto;
+  z-index: -1;
+}
+

@@ -1,0 +1,17 @@
+<!--pages/player/index.wxml-->
+<!-- <text>pages/player/index.wxml</text> -->
+
+<!-- 导入格式化工具 -->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+
+<view>
+  <!-- 背景 -->
+  <view>
+    <image class="bg-image" mode="aspectFill">{{currentSong.al.picUrl}}</image>
+    <view class="bg-cover"></view>
+  </view>
+  <!-- 导航栏 -->
+  <view>
+    <player-nav-bar></player-nav-bar>
+  </view>
+</view>

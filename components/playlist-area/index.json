@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "item-header": "../../components/item-header/index",
+    "playlist-area-item": "../playlist-area-item/index"
+  }
+}

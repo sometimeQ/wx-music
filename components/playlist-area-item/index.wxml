@@ -1,0 +1,17 @@
+<!--components/playlist-area-item/index.wxml-->
+<wxs src="../../utils/format.wxs" module="formatUtils"></wxs>
+
+<view class="item">
+  <view class="image-contain">
+    <!-- 图片 -->
+    <image class="image" wx:if="{{!isAll}}" src="{{item.picUrl}}" mode="widthFix"></image>
+    <image class="image" wx:else="{{isAll}}" src="{{item.coverImgUrl}}" mode="widthFix"></image>
+    <view class="play-counter">
+      <!-- 播放图标 -->
+      <image class="arrow" src="../../assets/images/icons/right-arrow.png"></image>
+      {{formatUtils.formatCount(item.playCount)}}
+    </view>
+  </view>
+  <view class="name">{{item.name}}</view>
+  <view class="copyright">#{{item.copywriter}}</view>
+</view>

@@ -1,0 +1,15 @@
+<!--components/playlist-area/index.wxml-->
+<!-- 个性推荐列表 -->
+<view class="area">
+  <!-- 标题 -->
+  <item-header title="个性推荐" showRightItem="{{false}}"></item-header>
+  <!-- 滚动的scloview  往x方向滚动 -->
+  <scroll-view class="album-list" scroll-x>
+    <block wx:for="{{recommendPlaylist}}" wx:key="id">
+      <view class="alum-item">
+        <!-- 引入自定义的组件 -->
+        <playlist-area-item item="{{item}}" bindtap="handleItemClick" data-item="{{item}}"></playlist-area-item>
+      </view>
+    </block>
+  </scroll-view>
+</view>

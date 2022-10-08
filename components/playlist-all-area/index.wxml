@@ -1,0 +1,14 @@
+<!--components/playlist-area/index.wxml-->
+<!-- 个性推荐列表 -->
+<view class="area">
+  <!-- 标题 -->
+  <item-header title="所有榜单" showRightItem="{{false}}"></item-header>
+  <scroll-view class="album-list">
+    <block wx:for="{{allRankingList}}" wx:key="id">
+      <view class="alum-item">
+        <!-- 引入自定义的组件 -->
+        <playlist-area-item item="{{item}}" isAll="{{true}}" bindtap="handleItemClick" data-item="{{item}}"></playlist-area-item>
+      </view>
+    </block>
+  </scroll-view>
+</view>

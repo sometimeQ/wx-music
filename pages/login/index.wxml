@@ -1,0 +1,61 @@
+
+<view>
+   <!-- 1.背景 -->
+<image class="bg-image" mode="aspectFill" src="{{bgPicUrl}}"></image>
+<view class="bg-cover"></view>
+
+<!-- <player-nav-bar bind:click="handleBackBtnClick" showUserLogin="{{false}}"></player-nav-bar> -->
+
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">LOGIN</view>
+    <view class="welcome">
+      欢迎回来！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <view>
+          <van-icon name="phone-o" />
+          <text class="tit">手机号码</text>
+        </view>
+        <input type="text" placeholder="请输入手机号码" id="userPhone"  bindinput="handleInput" />
+      </view>
+      <view class="input-item">
+        <view>
+          <van-icon name="closed-eye" />
+          <text class="tit">密码</text>
+        </view>
+        <input type="password" placeholder="请输入密码" id="userPassword" bindinput="handleInput" />
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="login">登录</button>
+  </view>
+</view>
+<!-- 未找到 van-toast 节点，请确认 selector 及 context 是否正确， 添加以下方法 -->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast"  custom-class="van-toast-box"/>
+<!-- <van-toast id="van-toast" /> -->
+</view>
+  
+
+
+
+
+
+
+
+<!-- <view class="main"> -->
+  <!-- 背景 -->
+  <!-- <view class="backGround"></view> -->
+  <!-- <view class="container-out"> -->
+    <!-- <view class="faceOut"></view> -->
+    <!-- <view class="textout">
+      <view class="word1">
+        <text>未登录</text>
+      </view>
+      <view class="word2">
+        <text>请点击登陆后使用全部功能</text>
+      </view>
+    </view> -->
+  <!-- </view> -->
+<!-- </view> -->

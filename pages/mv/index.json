@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "MV",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "item-search": "../../components/item-search/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "video-mv-item": "../../components/video-mv-item/index"
+  }
+}

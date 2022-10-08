@@ -1,0 +1,28 @@
+<!--components/recommend-item/index.wxml-->
+<!-- 引入格式化的文件 -->
+<wxs src="../../utils/format.wxs" module="formatUtil"></wxs>
+
+
+<view class="item" bindtap="handleSongItemClick">
+  <!-- 图片 --> 
+  <view class="image-info">
+    <image class="image" src="{{item.picUrl}}" />
+    <!-- 里面小图标 + 播放量 -->
+    <view class="play-counter">
+      <image class="arrow" src="../../assets/images/icons/right-arrow.png"></image>
+      <view>{{formatUtil.formatCount(item.song.bMusic.playTime)}}</view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="content">
+      <view class="name-info">
+        <view class="name">{{item.name}}</view>
+        <view class="tran-name" wx:if="{{item.song.transName}}">{{item.song.transName}}</view>
+      </view>
+      <view class="source">{{item.song.artists[0].name}} · {{item.song.album.name}}</view>
+  </view>
+  <!-- 箭头图标 -->
+  <view class="arrow">
+    <image class="arrow-right" src="../../assets/images/icons/arrow-right.png" />
+  </view>
+</view>

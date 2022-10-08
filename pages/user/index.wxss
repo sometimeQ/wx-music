@@ -1,0 +1,39 @@
+
+/* 定位导航栏 */
+.nav-gationbar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: #fafafa;
+  width: 100%;
+}
+/* nav */
+.nav-gationbar .nav-menu {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  /* padding-left: 14px; */
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* 导航栏激活的样式 */
+.navgationbar-selected {
+  /* color: #999999; */
+  font-size: 20.5px;
+  margin-right: 14px;
+  transition: 0.2s all linear;
+  /* 文字悬浮在下划线的上面 */
+  z-index: 2; 
+}
+
+/* 底部的导航栏线条 */
+.nav-underline {
+  position: absolute;
+  bottom: 5px;
+  background: #26ce8a;
+  height: 10rpx;
+  border-radius: 10rpx;
+  transition: 0.2s all linear;
+  z-index: 1;
+}

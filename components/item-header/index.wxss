@@ -1,0 +1,52 @@
+/* components/item-header/index.wxss */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  width: 100%;
+}
+
+/* 标题 */
+.header .header-left {
+  font-size: 36rpx;
+  font-weight: 700;
+  position: relative;
+}
+
+/* 导航栏下划线样式 */
+.header .header-left .underline {
+  /* 子绝父相 */
+  position: absolute;
+  bottom: 4px;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background: #26ce8a;
+  /* 动画 */
+  transition: all 0.2s linear;
+  z-index: -1;
+}
+
+/* 如果 slot 是空的，那么设置 .default 为 flex 布局 */
+.header .slot:empty + .right-info {
+  display: flex;
+}
+
+.header .right-info {
+  display: none;
+  align-items: center;
+  font-size: 28rpx;
+  color: #777777;
+}
+
+/* 箭头图标 */
+.header-right .right-info .arrow {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 搜索图标 */
+.header-right .right-info .image {
+  width: 40rpx;
+  height: 40rpx;
+}

@@ -1,0 +1,40 @@
+
+<!-- 导航栏布局 -->
+<view class="nav-gationbar" style="height: {{navgationBarHeight}}px;">
+    <view class="nav-menu" style="left: {{menuMarginRight}}px; bottom: {{menuMarginBotton}}px; height: {{menuHeight}}px; min-height: {{menuHeight}}px; line-height: {{menuHeight}}px;">
+      <view class="{{currentTableIndex == index ? 'navgationbar-selected' : 'navgationbar-normal'}}" 
+            style="margin-right: 14px;"
+            wx:for="{{navgationBarList}}" wx:key="index" data-index="{{index}}" bindtap="switchNavagationBar">
+            {{item.navgationTitle}}
+      </view>
+      <!-- 底部的下划线 -->
+      <view class="nav-underline" style="left: {{navgationBarOffsetLeft - menuMarginRight}}px; width: {{navgationBarContentWidth}}px;"></view>
+    </view>
+</view>
+<view style="margin-top: {{navgationBarHeight}}px;">
+  <view class="mvStyle">
+    <!-- 搜索框 -->
+    <item-search></item-search>
+    <!-- 歌手所属地区 -->
+    <view class="singer-area">
+      <block wx:for="{{areaList}}" wx:key="index">
+        <view class="area" data-index="{{item.index}}" data-id="{{item.id}}" data-name="{{item.name}}" data-value="{{item.value}}"
+          bindtap="handleAreaActiveItem" style="{{currentAreaIndex === index ? 'background: #26ce8a' : ''}}">{{item.name}}</view>
+      </block>
+    </view>
+    <!-- 筛选条件 -->
+    <van-dropdown-menu active-color="#26ce8a">
+      <van-dropdown-item value="{{defaultFilterString}}" options="{{filterArray}}" bind:change="changeFilterValue" />
+    </van-dropdown-menu>
+    <!-- 底部mv列表内容数据 -->
+    <view class="video-content">
+      <view class="video" wx:for="{{mvList}}" wx:key="id" class="item">
+        <video-mv-item item="{{item}}" bindtap="handleVideoItemClick" data-item="{{item}}"></video-mv-item>
+      </view>
+      <!-- <block wx:for="{{mvList}}" wx:key="id" class="item"> -->
+        
+      <!-- </block> -->
+    </view>
+  </view>
+</view>
+<!-- 底部 -->

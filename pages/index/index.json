@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "item-search": "../../components/item-search/index",
+    "item-header": "../../components/item-header/index",
+    "recommend-item": "../../components/recommend-item/index",
+    "playlist-area": "../../components/playlist-area/index",
+    "ranking-area": "../../components/ranking-area/index",
+    "playlist-all-area": "../../components/playlist-all-area/index"
+  }
+}

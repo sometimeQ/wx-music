@@ -1,0 +1,34 @@
+<!--components/ranking-area/index.wxml-->
+
+<!-- 引入格式化的文件 -->
+<wxs src="../../utils/format.wxs" module="formatUtil"></wxs>
+
+<view class="item">
+  <!-- 左侧 -->
+  <view class="content">
+    <view class="content-title">{{data.name}}</view>
+    <view class="content-list">
+      <block wx:for="{{3}}" wx:key="*this" wx:for-item="{{index}}">
+        <!-- 子控件 -->
+        <view class="content-list-item">
+          <view class="index">{{index + 1}}.</view>
+          <view class="singer">{{data.songList[index].ar[0].name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 右侧 -->
+  <view class="album">
+    <!-- 图片 -->
+    <image class="image" src="{{data.coverImgUrl}}" mode="widthFix"></image>
+    <!-- 播放数量 + 图标 -->
+    <view class="play-counter">
+      <image class="arrow" src="../../assets/images/icons/right-arrow.png"></image>
+      {{formatUtil.formatCount(data.playCount)}}
+    </view>
+  </view>
+</view>
+  <!-- 底部的图标 -->
+  <view class="bottom" wx:if="{{showBottomImage}}">
+    <image class="bottom-image" src="../../assets/images/index/bottom-image.png" mode="widthFix"></image>
+  </view>

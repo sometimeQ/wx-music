@@ -1,0 +1,15 @@
+.album-list {
+  /* vw 是视口宽度，和获取到屏幕宽度的方法达到的效果是一致的 */
+  width: 100vm;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* alum-item */
+.alum-item {
+  /* 独占一行显示 */
+  display: inline-block;
+  width: 210rpx;
+  margin-left: 20rpx;
+  vertical-align: top;
+}

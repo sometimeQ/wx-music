@@ -1,0 +1,5 @@
+<!--components/item-search/index.wxml-->
+<!-- <template> -->
+  <van-search class="home-search" input-align="center" placeholder="请输入搜索关键词" shape="round" background="white" 
+   bind:click-input="handleSearchClick"></van-search>
+<!-- </template> -->
