@@ -1,6 +1,11 @@
 /* pages/player/index.wxss */
 
-.bg-image, .bg-cover {
+page {
+  color: #fff;
+}
+
+.bg-image,
+.bg-cover {
   position: fixed;
   left: 0;
   top: 0;
@@ -8,3 +13,374 @@
   height: 100%;
   z-index: -1;
 } 
+
+/* 加个模糊的cover */
+.bg-cover {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* CSS 滤镜 : backdrop-filte */
+  backdrop-filter: blur(30px);
+}
+
+/* 自定义的导航栏 */
+.tab {
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #999;
+  font-weight: normal;
+}
+
+/* 分割线 */
+.tab .divider {
+  margin: 0 28rpx;
+}
+
+/* 激活的样式 */
+.tab .active {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 2px solid red;
+}
+
+/* 内容布局 */
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top: 90rpx;
+  /* padding: 20rpx; */
+}
+
+.comment .info {
+  height: 100%;
+  flex: 2;
+}
+
+/* 背景圆角 */
+.info .bacground-info {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 22rpx;
+  padding: 30rpx 60rpx 30rpx 30rpx;
+  margin-bottom: 30rpx;
+}
+
+/* 标题 */
+.info .bacground-info .title {
+  font-size: 56rpx;
+  font-weight: 700;
+  height: 100rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  /* 分割线 */
+  border-bottom: 1px  solid rgba(255, 255, 255, .1);
+}
+
+/* 歌手名字 */
+.info  .bacground-info .singer-name {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  white-space: nowrap;
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: 36rpx 0;
+}
+
+/* 歌手头像 */
+.info .bacground-info .singer-name .image {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 专辑 */
+.info .bacground-info .album-name {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: 30rpx 0  0  0;
+}
+
+.info .bacground-info .album-name .image {
+  width: 110rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 相似歌曲 */
+/* 背景 */
+.info .bacground-infos {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 22rpx;
+  padding: 30rpx 60rpx 30rpx  30rpx;
+  margin-bottom: 40rpx;
+}
+
+/* 标题 */
+.info .bacground-infos .title {
+  font-size: 44rpx;
+  font-weight: 700;
+  height: 80rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.info .bacground-infos .songs-info {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: 30rpx 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 图片 */
+.info .bacground-infos .songs-info .image {
+  width: 110rpx;
+  height: 90rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 音乐 */
+.content .music {
+  display: flex;
+  /* 方向 */
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top: 90rpx;
+  /* margin-bottom: 40rpx; */
+  /* 整体挤进去就好了 */
+  padding: 40rpx 40rpx 90rpx 40rpx;
+}
+
+.music .music-content {
+  height: 100%;
+}
+
+/* .album {
+  display: flex;
+  align-items: center;
+} */
+
+.album .image {
+  width: 100%;
+  border-radius: 12rpx;
+}
+
+/* 歌曲信息 */
+.music .info {
+  margin: 60rpx 0;
+}
+
+/* 标题 */
+.music .info .title {
+  font-size: 48rpx;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* 副标题 */
+.music .info .singer,
+.music .info .alias {
+  font-size: 26rpx;
+  color: #cccccc;
+  margin: 16rpx 0;
+  /* 不换行 */
+  white-space: nowrap;
+}
+
+/* 歌词容器 */
+.music .lyric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #26ce8a;
+}
+
+/* 歌词 */
+.music .lyric .song-lyric {
+  height: 75rpx;
+  text-align: center;
+ }
+
+ /* 进度条 */
+ .music .progress {
+  margin: 20rpx 10rpx 0  10rpx;
+ }
+
+ /* 滑块 */
+ .slider {
+  margin: 0 8rpx 18rpx 8rpx;
+ }
+
+ /* 时间 */
+ .time {
+   display: flex;
+   justify-content: space-between;
+   color: #cccc;
+   font-size: 22rpx;
+ }
+
+ .time .current {
+  margin-left: 10rpx;
+}
+
+/* 操作栏 */
+.operation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40rpx 0 0 0rpx;
+}
+
+.operation .btn {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 0;
+}
+
+/* 播放模式名字图标 */
+.operation .btn-mode {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 播放、暂停 */
+.operation .btn-pause {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+/* 遮罩层 */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 30rpx 30rpx;
+}
+
+.operation-mini { 
+  display: flex;
+  align-items: center;
+  width: 96%;
+  height: 120rpx;
+  background: rgba(255, 255, 255, 0.3);
+  /* background: orange; */
+  min-width: 0;
+  margin-bottom: 10rpx;
+  padding: 0 10rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+/* 随机播放图标，昵称，关闭图标容器布局 */
+.operation-mini .operation-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+}
+
+/* 居中 */
+.operation-mini .operation-name {
+  display: flex;
+  align-items: center;
+}
+
+/* .operation-mini .btn { 
+  width: 60rpx;
+  height: 60rpx;
+} */
+
+/* 播放图标改变布局 */
+.operation-mini .btn-mode {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 关闭 */
+.operation-mini .btn-close {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 遮罩层 */
+.block {
+  width: 96%;
+  height: 120rpx;
+  background: rgba(225, 225, 255, 0.3);
+  border-radius: 22rpx;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-bottom: 10rpx;
+  padding: 0 10rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+/* 有时候是类名起的问题 */
+.block .song-info {
+  display: flex;
+  align-items: center;
+}
+
+/* 不换行 */
+.block .song-name {
+  white-space: nowrap;
+  margin-left: 18rpx;
+}
+
+/* 激活文字颜色 */
+.block .song-name-active {
+  white-space: nowrap;
+  color: #26ce8a;
+  margin-left: 18rpx;
+}
+
+/* 不换行 */
+.block .singer-name {
+  white-space: nowrap;
+}
+
+/* 高度占位 */
+.play-bar-placeholder {
+  height: 40rpx;
+  background: purple;
+}
+
+/* 暂无歌曲歌词显示 */
+.block .noSongs { 
+  margin: 0 auto;
+  color: #fafafa;
+}
+
+/* 歌词布局 */
+.music .lyric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 28rpx;
+  color: #26ce8a;
+  margin: 60rpx 0;
+}
+
+.lyric-list 
+
+
+
+

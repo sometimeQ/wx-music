@@ -1,0 +1,73 @@
+/* components/comment-area/index.wxss */
+
+.coment {
+
+}
+
+/* 背景圆角 */
+.bacgrond-info {
+  background: rgba(225, 225, 225, 0.1);
+  border-radius: 22rpx;
+  padding: 30rpx 60rpx 30rpx 30rpx;
+  margin-bottom: 40rpx;
+}
+
+/* 标题 */
+.bacgrond-info .title {
+  font-size: 44rpx;
+  font-weight: 700;
+  height: 80rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* 布局子控件 */
+.bacgrond-info .hot-comment {
+  display: flex;
+  margin: 30rpx 0 30rpx 0;
+}
+
+/* 图片 */
+.bacgrond-info .hot-comment .image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 布局用户评论信息相关 */
+.bacgrond-info .hot-comment .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 微调点赞图标 */
+.bacgrond-info .hot-comment .user-info .like {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 30rpx;
+  font-size: 30rpx;
+}
+
+/* 时间 */
+.bacgrond-info .hot-comment .comment-time {
+  font-size: 26rpx;
+  color: rgba(225, 225, 225, 0.5);
+  margin-bottom: 10rpx;
+}
+
+/* 内容 */
+.bacgrond-info .hot-comment .comment-content {
+  font-size: 33rpx;
+}
+
+
+
+

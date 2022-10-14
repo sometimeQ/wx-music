@@ -1,4 +1,39 @@
-<!--components/player-nav-bar/index.wxml-->
-<!-- <text>components/player-nav-bar/index.wxml</text> -->
+
+<!-- 播放器导航 -->
+<view class="nav">
+  <!-- 高度 -->
+  <view style="height: {{statusBarHeight}}px;"></view>
+  <view class="nav-bar" style="height: {{navgationBarHeight}}px;">
+    <!-- 是否显示登陆 -->
+    <view class="left" bindtap="handleLeftClick" wx:if="{{showUserLogin}}">
+      <view class="left-slot">
+        <!-- 占位插槽 -->
+        <slot name="left"></slot>
+      </view>
+      <view class="left-arrow">
+        <image class="icon" mode="widthFix" src="/assets/images/icons/arrow-left.png"></image>
+      </view>
+    </view>
+    <!-- 登录后 -->
+    <view class="left" bindtap="handleLeftClickToIndex" wx:else>
+      <view class="left-slot">
+        <solt name="left"></solt>
+      </view>
+      <view class="left-arrow">
+        <image class="icon" mode="widthFix" src="/assets/images/icons/index.png"></image>
+      </view>
+    </view>
+    <!-- 中间显示的标题 -->
+    <view class="center">
+      <view class="center-slot">
+        <!-- 这里的name,表示在player里面的控件会插入显示在这个地方 -->
+        <slot name="title"></slot>
+      </view>
+      <view class="center-title">{{title}}</view>
+    </view>
+    <!-- 右边 -->
+    <view class="right"></view>
+  </view>
+</view>
 
 

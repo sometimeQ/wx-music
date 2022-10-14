@@ -1,1 +1,51 @@
-/* components/player-nav-bar/index.wxss */
+/* 容器 */
+.nav-bar {
+  display: flex;
+  text-align: center;
+
+  position: fixed;
+  top: 20px;
+  z-index: 99;
+  background: transparent;
+  width: 100%;
+}
+
+/* 双飞翼布局 */
+.left, .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+}
+
+.left-arrow {
+  display: block;
+}
+
+/* 插槽定义 */
+/* .left-slot:empty + .left-arrow {
+  display: block;
+} */
+
+.center-title {
+  display: block;
+}
+
+/* 显示中间的内容 */
+/* .center-slot:empty + .center-title {
+  display: block;
+} */
+
+/* 返回图标的定义 */
+.left .left-arrow .icon {
+  width: 44rpx;
+  display: block;
+}
+
+/* 中间自适应 */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}

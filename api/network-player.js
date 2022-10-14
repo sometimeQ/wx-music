@@ -27,3 +27,25 @@ export function getSongLyric(id) {
     id
   })
 }
+
+/**
+ * 获取相似歌曲
+ * @param {*} id 
+ */
+export function getSimiSong(id) {
+  return network.GET("/simi/song", {
+    id
+  })
+}
+
+/**
+ * 获取歌曲的评论
+ * @param {*} id 
+ * @param {*} limit 
+ */
+export function getSongComment(id, limit = 10) {
+  return network.GET("/comment/music", {
+    id,
+    limit
+  })
+}

@@ -39,6 +39,9 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
+  "requireBackgroundModes": [
+    "audio"
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {

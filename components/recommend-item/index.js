@@ -68,6 +68,7 @@ Component({
               // 不存在, 拼接在播放歌曲列表数组后面
               let playListSongs = newSong.concat(this.data.playListSongs);
               this.setData({ playListSongs: playListSongs });
+
               // 设置vuex里面的值
               playerStore.setState("playListSongs", this.data.playListSongs);
               // 播放的索引,默认为0
@@ -79,6 +80,10 @@ Component({
           playerStore.onState("playListSongs", (result) => {
             this.setData({ playListSongs: result });
           });
+
+          // console.log('历史记录 start');
+          // console.log(this.data.playListSongs);
+          // console.log('历史记录 end');
 
           // 跳转该首先歌曲详情
           wx.navigateTo({
