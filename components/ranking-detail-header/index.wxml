@@ -1,0 +1,56 @@
+
+<!-- 引入格式化文件 -->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+
+<!-- 导入格式化工具 -->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+
+<view class="header" style="padding-top: {{navgationBarHeight}}px; height: {{coverHeight}}rpx; transition: {{coverTransition}};" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd">
+  <!-- 背景 -->
+  <image class="bg-image" mode="aspectFill" src="{{rankingFirstPicture}}"></image>
+  <view class="bg-cover"></view>
+  <!-- 内容 -->
+  <view class="content">
+    <view class="info">
+      <view class="title-info">
+        <view class="desc">
+          <view class="desc-info">
+            <view class="desc-info-name">巅峰榜</view>
+            <text class="desc-info-time"> · 每小时更新</text>
+          </view>
+          <view class="title">{{rankingInfo.name}}</view>
+          <view class="updateTime">最近更新 {{format.formatTimeWithDate(rankingInfo.trackUpdateTime)}}</view>
+        </view>
+        <view>
+          <image class="image-info" src="../../assets/images/ranking/background-image.png"></image>
+        </view>
+      </view>
+    </view>
+    <view>
+      <image class="image" mode="aspectFill" src="{{rankingFirstPicture}}"></image>
+    </view>
+  </view>
+</view>
+
+
+<!-- <view class="header" style="margin-top: {{navgationBarHeight}}px; height: {{coverHeight}}rpx; transition: {{coverTransition}};" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd">
+  <image class="bg-image" mode="aspectFill" src="{{rankingFirstPicture}}"></image>
+  <view class="bg-cover"></view>
+  <view class="content">
+    <view class="info">
+      <view class="title-info">
+        <view class="desc">
+          <view class="desc-info">
+            <view class="desc-info-name">巅峰榜</view>
+            <view class="desc-info-time"> · 每小时更新</view>
+          </view>
+          <view class="title">{{rankingInfo.name}}</view>
+          <view class="updateTime">最近更新 {{format.formatTimeWithDate(rankingInfo.trackUpdateTime)}}</view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <image class="image" mode="aspectFill" src="{{rankingFirstPicture}}" />
+    </view>
+  </view>
+</view> -->

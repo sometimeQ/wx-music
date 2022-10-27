@@ -18,6 +18,8 @@ const gloableSystemMessage = (object) => {
   object.globalData.menuMarginRight = systemInfo.screenWidth - menuButtonInfo.right;
   // 胶囊距离底部间距
   object.globalData.menuMarginBotton = menuButtonInfo.top - systemInfo.statusBarHeight;
+  object.globalData.menuTop = menuButtonInfo.top;
+
   // 胶囊高度
   object.globalData.menuHeight = menuButtonInfo.height;
   // 宽高比

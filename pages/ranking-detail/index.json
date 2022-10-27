@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ranking-detail-header": "../../components/ranking-detail-header",
+    "ranking-list-item": "../../components/ranking-list-item/index"
+  }
+}

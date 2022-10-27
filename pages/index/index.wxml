@@ -50,7 +50,7 @@
           </view>
           <!-- 个性推荐 -->
           <playlist-area recommendPlaylist="{{recommendPlaylist}}"></playlist-area>
-          <!-- 巅峰榜 -->
+          <!-- 巅峰排行榜 -->
           <view class="ranking">
             <item-header title="巅峰排行榜" showRightItem="{{false}}"></item-header>
             <!-- 布局子控件 -->

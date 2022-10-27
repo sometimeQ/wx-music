@@ -1,0 +1,32 @@
+
+<!-- 导入格式化工具类 -->
+<wxs src="../../utils/format.wxs" module="utilsFromat"></wxs>
+
+<view>
+  <!-- 导航栏 -->
+  <view class="nav-bar" style="height: {{navgationBarHeight}}px;">
+    <view class="menu-bar" style="height: {{menuHeight}}px; min-height: {{menuHeight}}px; line-height: {{menuHeight}}px; left: {{menuMarginRight}}px; top: {{menuTop}}px;">
+      <view class="left">
+        <image class="arrow" src="../../assets/images/icons/left-arrow.png" bindtap="handleBackBtnClick" />
+        <image class="arrow" src="../../assets/images/icons/home-hover.png" bindtap="backToIndex" />
+      </view>
+      <view class="title"></view>
+      <view class="right"></view>
+    </view>
+  </view>
+
+  <!-- 歌单详情头部 -->
+  <view class="playlist-header">
+    <!-- 引入组件 -->
+    <playlist-detail-header playlistData="{{playlistInfo}}" navgationBarHeight="{{navgationBarHeight}}" />
+  </view>
+
+  <!-- 歌单列表 -->
+  <view class="playlist" style="margin-top: {{0}}px; transition: 0.5s margin ease;">
+      <block wx:for="{{playlistInfo.tracks}}" wx:key="id">
+        <!-- 引入组件 -->
+        <song-item-view item="{{item}}" index="{{index + 1}}" />
+      </block>
+  </view>
+</view>
+

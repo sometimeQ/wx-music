@@ -7,7 +7,7 @@
     <block wx:for="{{allRankingList}}" wx:key="id">
       <view class="alum-item">
         <!-- 引入自定义的组件 -->
-        <playlist-area-item item="{{item}}" isAll="{{true}}" bindtap="handleItemClick" data-item="{{item}}"></playlist-area-item>
+        <playlist-area-item item="{{item}}" isAll="{{true}}" data-id="{{item.id}}" data-item="{{item}}" bindtap="handleItemClick"></playlist-area-item>
       </view>
     </block>
   </scroll-view>

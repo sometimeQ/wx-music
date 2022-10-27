@@ -8,6 +8,9 @@ function formatCount (count) {
   } else {
     return counter + ''
   }
+
+  console.log(counter);
+  console.log('完毕啦');
 }
 
 // 美化时间格式

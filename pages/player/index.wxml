@@ -178,12 +178,14 @@
         </scroll-view>
       </swiper-item>
       <!-- 歌词区域 -->
-      <swiper-item class="lyric">
-        <scroll-view class="lyric-list" scroll-y scroll-top="{{lyricScrollTop}}" scroll-with-animation>
+      <swiper-item class="lyric" style="margin-top: {{navgationBarHeight}}px;">
+        <scroll-view style="height: {{contentHeight}}px;" class="lyric-list" scroll-y scroll-top="{{lyricScrollTop}}" scroll-with-animation>
           <block wx:for="{{lyricInfos}}" wx:key="index">
-            <view class="item {{currentLyricIndex === index ? 'active' : ''}}" 
-            style="padding-top: {{index === 0 ? (contentHeight / 2 - 260) : '0'}}px; padding-bottom: {{index === lyricInfos.length - 1 ? (contentHeight / 2 + 260) : 0}}px;" wx:if="{{item.text}}">{{item.text}}</view>
-            <view></view>
+            <!-- <view class="item {{currentLyricIndex === index ? 'active' : ''}}" wx:if="{{item.text}}">{{item.text}}</view> -->
+            <view class="item {{currentLyricIndex === index ? 'active': ''}}" style="padding-top: {{index === 0 ? (contentHeight/2-260): 0}}px; padding-bottom: {{index === lyricInfos.length - 1 ? (contentHeight/2+260): 0}}px;" wx:if="{{item.text}}">
+          {{item.text}}
+          <view wx:if="{{item.transText}}">{{item.transText}}</view>
+        </view>
           </block>
         </scroll-view>
       </swiper-item>

@@ -1,0 +1,100 @@
+
+/* 容器 */
+.item {
+  display: flex;
+  align-items: center;
+  margin: 36rpx 0 10rpx;
+}
+
+/* 索引 */
+.index {
+  font-size: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  width: 34px;
+  padding-right: 6px;
+  font-weight: 600;
+}
+
+/* 索引 前三 */
+.hotIndex {
+  font-size: 50rpx;
+  color: #26ce8a;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+  width: 34px;
+  padding-right: 6px;
+}
+
+/* 图片 */
+.hotImage {
+  height: 70rpx;
+  width: 70rpx;
+  margin-right: 10px;
+  margin-top: 2rpx;
+  border-radius: 6px;
+  box-shadow:0 5px 5px rgba(0,0,0,0.5)
+}
+
+/* 容器 */
+.info {
+  display: 1;
+  /* background: pink; */
+  margin-left: 16rpx;
+  min-width: 0;
+}
+
+.info  .name {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.info .name .song-name { 
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 后面追加的内容 */
+.info .name .trans-name { 
+  display: block;
+  font-size: 20rpx;
+  margin-left: 6rpx;
+  color: #999999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 底部描述文字 */
+.info .source {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+  min-width: 0;
+}
+
+.source .source-name { 
+  white-space: nowrap;
+}
+
+.source .playlist-info {
+  display: flex;
+  min-width: 0;
+}
+
+.source .playlist-info .playlist-name {
+  margin-left: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+

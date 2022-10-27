@@ -1,0 +1,48 @@
+
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+
+
+<view class="header" style="padding-top: {{navgationBarHeight}}px; height: {{coverHeight}}rpx; transition: {{coverTransition}};"
+  bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd">
+  <!-- 背景 -->
+  <image class="bg-image" mode="aspectFill" src="{{playlistData.coverImgUrl || picUrl}}" />
+  <view class="bg-cover"></view>
+  <!-- 内容 -->
+  <view class="content">
+    <view>
+      <image class="image" mode="scaleToFill" src="{{playlistData.coverImgUrl || picUrl}}" />
+    </view>
+    <!-- 右边信息 -->
+    <view class="info">
+      <view class="title">{{playlistData.name || name}}</view>
+      <view class="author">
+        <image class="avatar" mode="aspectFill" src="{{playlistData.creator.avatarUrl}}"></image>
+        <!-- 昵称 -->
+        <text class="nickname">{{playlistData.creator.nickname}}</text>
+      </view>
+      <!-- 描述 -->
+      <view class="desc">
+      <view class="desc-info" wx:if="{{playlistData.description}}">简介: {{playlistData.description}}</view>
+      <view class="desc-info" wx:else>暂无简介</view>
+      </view>
+    <!-- </view> -->
+    </view>
+  </view>
+  <!-- 操作 -->
+  <view class="operation">
+    <view class="favor item">
+      <image class="icon" mode="widthFix" src="../../assets/images/icons/favor_icon.png"></image>
+      <text class="text" wx:if="{{playlistData.playCount}}">{{format.formatCount(playlistData.playCount)}}</text>
+      <text class="text" wx:else>{{format.formatCount(albumInfo.shareCount)}}</text>
+    </view>
+    <view class="comment item">
+      <image class="icon" mode="widthFix" src="../../assets/images/icons/comment.png"></image>
+      <text class="text" wx:if="{{playlistData.commentCount}}">{{format.formatCount(playlistData.commentCount)}}</text>
+      <text class="text" wx:else>{{format.formatCount(albumInfo.commentCount)}}</text>
+    </view>
+    <view class="share item">
+      <image class="icon" mode="widthFix" src="../../assets/images/icons/share_icon.png"></image>
+      <text class="text" bindtap="handleShare" open-type="share">分享</text>
+    </view>
+  </view>
+</view>

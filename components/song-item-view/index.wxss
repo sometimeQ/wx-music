@@ -1,0 +1,96 @@
+/* components/song-item-view/index.wxss */
+
+.item {
+  display: flex;
+  align-items: center;
+  /* margin: ; */
+  margin: 36rpx 0 10rpx;
+}
+
+.index {
+  font-size: 30rpx;
+  text-align: center;
+  box-sizing: content-box;
+  width: 22px;
+  margin-right: 6px;
+}
+
+/* 歌曲标题 */
+.info {
+  flex: 1;
+  width: 80%;
+  margin-left: 16rpx;
+  min-width: 0;
+  /* background-color: pink; */
+  margin-right: 20rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.info .name {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 30rpx;
+  flex-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.name .container {
+  display: flex;
+  width: 80%;
+  flex-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 歌词名字 */
+.info .name .container .song-name { 
+  flex-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/*  -- */
+.info .name .container .trans-name {
+  /* background: purple; */
+  /* display: flex; */
+  display: block;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+  white-space: nowrap;
+  color: #999999;
+}
+
+/* 来源 */
+.info .source {
+  /* background: purple; */
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  color: #666;
+  min-width: 28rpx;
+}
+
+/* 专辑图标 */
+.source .icon {
+  width: 38rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+  flex-shrink: 0;
+}
+
+/*  */
+.source .source-name {
+  white-space: nowrap;
+}
+
+.source .playlist-info .playlist-name {
+  margin-left: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

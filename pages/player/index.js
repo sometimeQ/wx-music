@@ -4,6 +4,9 @@ import { getSimiSong, getSongComment, getSongDetail } from '../../api/network-pl
 // 播放的模式、顺序、随机、单曲
 const playModeNames = ["order", "repeat", "random"];
 
+// 获取应用实例
+const app = getApp();
+
 // pages/player/index.js
 Page({
 
@@ -19,6 +22,10 @@ Page({
     contentHeight: 0 , // 内容的高度
     isMusicLyric: true, // 是否是歌词
     navBarList: ['评论', '歌曲', '歌词'], // 导航栏数据
+
+    // 导航栏高度
+    navgationBarHeight: app.globalData.navgationBarHeight,
+    screenHeight: app.globalData.screenHeight,
 
     currentTime: 0, // 当前播放的时间
     currentLyricIndex: 0, // 当前给次播放的索引
@@ -37,6 +44,7 @@ Page({
     show: false, // 是否显示歌词信息，默认不显示
     canPlaySongList: [], // 能播放的数组
     canPlaySongCurrentIndex: 0, // 当前播放的索引
+    lyricScrollTop: 0, // 歌词自动滚动的距离
 
     simiSongsList: [], // 相似歌曲数据
 
@@ -92,9 +100,10 @@ Page({
         this.setData({ currentTime: currentTime, sliderValue: sliderValue });
       }
 
-      // 索引
+      // 索引，歌词变化，的乘以高度
       if (currentLyricIndex) {
-        this.setData({ currentLyricIndex: currentLyricIndex });
+        console.log('=============  currentLyricIndex ================= ' + currentLyricIndex);
+        this.setData({ currentLyricIndex: currentLyricIndex, lyricScrollTop: currentLyricIndex * 65});
       }
 
       // 当前播放的歌词

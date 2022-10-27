@@ -1,0 +1,30 @@
+
+<!-- 导入格式化工具 -->
+<wxs src="../../utils/format.wxs" module="fromat"></wxs>
+
+
+<view style="height: 100vh; width: 100vw;"> 
+   <view class="nav-bar" style="height: {{navgationBarHeight}}px;">
+    <view class="menu-bar" style="height: {{menuHeight}}px; min-height: {{menuHeight}}px; line-height: {{menuHeight}}px; left: {{menuMarginRight}}px; top: {{menuTop}}px;">
+      <view class="left">
+        <image class="arrow" src="../../assets/images/icons/left-arrow.png" bindtap="handleBackBtnClick" />
+        <image class="arrow" src="../../assets/images/icons/home-hover.png" bindtap="backToIndex" />
+      </view>
+      <view class="title"></view>
+      <view class="right"></view>
+    </view>
+  </view>
+  <view style="height: 100vh; width: 100vw;">
+    <scroll-view scroll-y style="height: {{contentHeight - 40}}px;">
+    <view class="ranking-header">
+      <ranking-detail-header rankingInfo="{{rankingInfo}}" rankingFirstPicture="{{rankingSongList[0].al.picUrl}}" navgationBarHeight="{{navgationBarHeight}}"/>
+    </view>
+
+    <view class="rankingList" style="transition: 1s margin ease;">
+        <block wx:for="{{rankingSongList}}" wx:key="id">
+          <ranking-list-item item="{{item}}" contentHeight="{{contentHeight}}" index="{{index + 1}}" bindtap="handleSongItemClick" data-index="{{index}}" />
+        </block>
+    </view>
+  </scroll-view>
+  </view>
+</view> 

@@ -31,9 +31,6 @@
       <view class="video" wx:for="{{mvList}}" wx:key="id" class="item">
         <video-mv-item item="{{item}}" bindtap="handleVideoItemClick" data-item="{{item}}"></video-mv-item>
       </view>
-      <!-- <block wx:for="{{mvList}}" wx:key="id" class="item"> -->
-        
-      <!-- </block> -->
     </view>
   </view>
 </view>

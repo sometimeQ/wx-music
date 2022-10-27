@@ -6,7 +6,10 @@
     "pages/logs/logs",
     "pages/search/index",
     "pages/login/index",
-    "pages/player/index"
+    "pages/player/index",
+    "pages/playlist-detail/index",
+    "pages/ranking-detail/index",
+    "pages/video-detail/index"
   ],
   "tabBar": {
     "color": "#000000",
@@ -44,6 +47,7 @@
   ],
   "style": "v2",
   "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "iconfont": "/iconfont/iconfont"
   }

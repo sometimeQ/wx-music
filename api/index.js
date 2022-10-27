@@ -20,7 +20,7 @@ class Network {
           cookie: wx.getStorageSync('cookies') ? wx.getStorageSync('cookies').find(item => item.indexOf('MUSIC_U') !== -1) : ''
         },
         method: method,
-        timeout: 10000,
+        timeout: 20000,
         success: (result) => {
           resolve(result.data);
         },
@@ -34,10 +34,40 @@ class Network {
     })
   }
   
+  request2(url, method, data) {
+    // 使用promiss
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: this.BASE_URL2 + url, // 基本配置信息
+        method: method,
+        data: data,
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          cookie: wx.getStorageSync('cookies') ? wx.getStorageSync('cookies').find(item => item.indexOf('MUSIC_U') !== -1) : ''
+        },
+        method: method,
+        timeout: 10000,
+        success: (result) => {
+          resolve(result.data);
+        },
+        fail: (res) => {
+          reject(res);
+        },
+        complete: (res) => {
+
+        },
+      })
+    })
+  }
+
   // 封装GET请求
   GET(url, params) {
     return this.request(url, 'GET', params);
   }
+
+  // get(url, params) {
+  //   return this.request(url, 'GET', params);
+  // }
 
   // 封装POST请求
   POST(url, data) {

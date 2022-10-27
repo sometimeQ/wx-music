@@ -22,6 +22,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 所有的榜单
+    handleItemClick(event) {
+      console.log(event);
+      wx.navigateTo({
+        url: 'url',
+      })
+    }
   }
 })

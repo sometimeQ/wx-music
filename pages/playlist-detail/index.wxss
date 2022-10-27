@@ -1,0 +1,63 @@
+/* pages/playlist-detail/index.wxss */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background: orange; */
+  z-index: 99;
+}
+
+/* 胶囊按钮区域 */
+.nav-bar .menu-bar {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  /* background: plum; */
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 导航栏按钮 */
+.nav-bar .menu-bar .left {
+  display: flex;
+  flex: 1;
+}
+
+/* 图标大小 */
+.nav-bar .menu-bar .arrow {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* 导航栏标题 */
+.nav-bar .menu-bar .title {
+  flex: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+
+  color: green;
+}
+
+/* 导航栏占位 */
+.nav-bar .menu-bar .right {
+  flex: 1;
+}
+
+/* 歌单头部 */
+/* .playlist-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+} */
+
+.playlist {
+  z-index: 1;
+  margin: 24rpx 24rpx 20rpx 24rpx;
+  padding-bottom: 10px;
+}

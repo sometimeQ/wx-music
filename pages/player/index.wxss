@@ -369,18 +369,38 @@ page {
 }
 
 /* 歌词布局 */
-.music .lyric {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  font-size: 28rpx;
-  color: #26ce8a;
-  margin: 60rpx 0;
+.lyric-list {
+  /* height: 100%; */
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 10px;
+  /* background: orange; */
 }
 
-.lyric-list 
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
 
+/* 每一行的歌词行高 */
+.lyric-list .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70px;
+  font-size: 28rpx;
+  text-align: center;
+  color: #989898;
+}
+
+/* 激活样式要这么写 */
+.lyric-list .item.active {
+  color: #26ce8a;
+  font-size: 36rpx;
+  margin: 10rpx 0;
+}
 
 
 

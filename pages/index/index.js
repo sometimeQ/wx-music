@@ -344,7 +344,7 @@ Page({
     const rankingName = rankingMap[idx];
     // 跳转到榜单详情
     wx.navigateTo({
-      url: `/pages/ranking-detail/index?id=${idx}&type=idx`
+      url: `/pages/ranking-detail/index?ranking=${rankingName}&type=rank`
     })
   },
   // 新歌推荐item歌曲点击事件
